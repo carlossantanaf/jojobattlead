@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Adventure Battle</title>
+</head>
+<body>
+  <main class="main">
+    <audio class="audio" src="./audios/jojoTheme.mp3" autoplay></audio>
+    <input type="range" id="volume-control">
+    <h1><span>A</span>dventure <span>B</span>attle</h1>
+    <h2>Escolha seu Personagem</h2>
+    <section class="conteudo">
+      <form name="escolha" class="personagens">
+       <div>
+        <input type="radio" value="jotaro" id="jotaro" name="player">
+         <label for="jotaro" class="jotaro">Jotaro Kujo</label>
+       </div>
+       <div>
+        <input type="radio" value="kakyoin" id="kakyoin" name="player">
+        <label for="kakyoin" class="kakyoin">Noriaki Kakyoin</label>     
+      </div>
+      <div>
+        <input type="radio" value="polnareff" id="polnareff" name="player">
+        <label for="polnareff" class="polnareff">Jean Polnareff</label>  
+      </div>
+       <input type="submit" class="buttonComecar" value="COMEÇAR">
+      </form>
+      <aside class="bordas">
+        <div>
+          <img src="./img/borda.png" alt="borda">
+        </div>
+        <div class="hide">
+          <img src="./img/bordaJotaro.png" alt="borda">
+        </div>
+        <div class="hide">
+          <img src="./img/bordaKakyoin.png" alt="borda">
+        </div>
+        <div class="hide">
+          <img src="./img/bordaPolnareff.png" alt="borda">
+        </div>
+      </aside>
+    </section>
+    <script src="./script.js"></script>
+  </main>
+</body>
+</html>

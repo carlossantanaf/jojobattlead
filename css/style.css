@@ -1,0 +1,87 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.main {
+  max-width: 1400px;
+  background-image: url(/img/back.png);
+  margin: 0 auto;
+}
+.main > h1 {
+  font-size: 6rem;
+  font-family: 'Macondo', cursive;
+  text-shadow: 0.2em 0.5em 0.1em #FD0000,
+      -0.3em 0.1em 0.1em #ff3333,
+      0.4em -0.3em 0.1em #be0000;
+      text-align: center;
+  padding-top: 1rem; 
+}
+.main > h1 > span {
+  font-size: 8rem;
+}
+.main > h2 {
+  font-family: 'Macondo', cursive;
+  font-size: 2.5rem;
+  text-shadow: 0px 1px red;
+  text-align: center; 
+  padding-top: 1rem;
+}
+
+.conteudo {
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+}
+.personagens  label {
+  font-family: 'Macondo', cursive;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 1px black;
+  cursor: pointer;
+}
+.personagens div > input {
+  display: none;
+}
+.personagens  input:checked + label{
+  text-shadow: 5px 5px 1px #EE0000;
+  background-color: #be0000;
+}
+.personagens  .jotaro:hover {
+  text-shadow: 5px 5px 1px #EE0000;
+}
+.personagens  .kakyoin:hover {
+  text-shadow: 5px 5px 1px #EE0000;
+}
+.personagens  .polnareff:hover {
+  text-shadow: 5px 5px 1px #EE0000;
+}
+.personagens > div + div {
+  margin-top: 2.5rem;
+}
+.buttonComecar {
+  margin-top: 5.6rem;
+  padding: 1rem 2rem;
+  font-family: 'Macondo', cursive;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(#EE0000, #7D0000);
+  cursor: pointer;
+}
+.buttonComecar:hover {
+  background: #7D0000;
+}
+#volume-control {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
