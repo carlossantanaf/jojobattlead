@@ -4,8 +4,16 @@ const comecar = document.querySelector('.buttonComecar');
 const players = document.querySelectorAll('div input');
 const imgs = document.querySelectorAll('.bordas div');
 const main = document.querySelector('.main');
-let audio = document.querySelector('.audio');
-const dioTheme = document.querySelector('.mainBattle > .audio')
+const aud = document.querySelector('.audio')
+const range = document.querySelector("#volume-controlP");
+range.addEventListener("change", () => {
+  aud.volume = range.value * 0.01;
+});
+
+function autoPI(){
+  aud.play()
+}
+autoPI()
 
 players.forEach((item, index) => {
   item.addEventListener('click', function() {
@@ -25,7 +33,15 @@ comecar.addEventListener('click', function(event) {
   else if (imgs[3].classList.contains('hide') === false) {
     main.remove()
     battle.classList.remove('hide')
-    dioTheme.setAttribute('autoplay', '')
+    function autoP(){
+      const aud = document.querySelector('.audioo')
+      const rangeP = document.querySelector("#volume-controlBP");
+      rangeP.addEventListener("change", () => {
+      aud.volume = rangeP.value * 0.01;
+});
+      aud.play()
+   }
+   autoP()
 
   }
   else {
@@ -48,6 +64,7 @@ const dioHit = document.getElementById('dioHit')
 const dioImg = document.getElementById('dioImg')
 let totalVidaDio = 150;
 let totalVidaPolnareff = 115;
+
 
  function vezDoDio(){
   dioTurno.classList.remove('hide');
