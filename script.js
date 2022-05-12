@@ -152,7 +152,8 @@ atacar.addEventListener('click', function(){
  console.log(atacarDano)
   if(totalVidaDio <= 0) {
     totalVidaDio = 0
-  }
+    alert('Nem sabia que dava pra ganhar do dio kkkkk')
+  } 
   if(atacarDano === 15) {
     totalVidaDio -= 15
     alert('Polnareff diz: Acertei o ponto fraco dele!')
@@ -188,7 +189,6 @@ atacar.addEventListener('click', function(){
       dioImg.classList.remove('hide')
       clearInterval(hitNeleT)
     }, 100)
-    
   }
 
   polnareffVida.innerHTML = '<p>Vida: '+totalVidaPolnareff+'/115</p>';
@@ -325,7 +325,8 @@ function batalhaAA() {
     totalVidaDio -= atacarDano;
    console.log(atacarDano)
     if(totalVidaDio <= 0) {
-      totalVidaDio = 0
+      totalVidaDio = 0;
+      alert('Nem sabia que dava pra ganhar do dio kkkkk')
     }
     if(atacarDano === 20) {
       totalVidaDio -= 20
@@ -500,6 +501,7 @@ function batalhaAA() {
      console.log(atacarDano)
       if(totalVidaDio <= 0) {
         totalVidaDio = 0
+        alert('Nem sabia que dava pra ganhar do dio kkkkk')
       }
       if(atacarDano === 10) {
         totalVidaDio -= 10
