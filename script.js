@@ -44,11 +44,12 @@ const dioTurno = document.querySelector('.turno-dio');
 const playerTurno = document.querySelector('.turno');
 const danoCuraP = document.querySelector('.danoCuraP')
 const danoCuraD = document.querySelector('.danoCuraD')
+const dioHit = document.getElementById('dioHit')
+const dioImg = document.getElementById('dioImg')
 let totalVidaDio = 150;
 let totalVidaPolnareff = 115;
 
  function vezDoDio(){
- 
   dioTurno.classList.remove('hide');
   playerTurno.classList.add('hide');
  const tempo =  setInterval(function() {
@@ -68,12 +69,19 @@ let totalVidaPolnareff = 115;
       battle.remove();
     }
     clearInterval(tempo)
-  }, 6000);
-
+  }, 4000);
+  setInterval(function() {
+    danoCuraP.classList.remove('anima')
+    danoCuraP.classList.remove('red')
+    danoCuraP.classList.remove('green')
+    danoCuraP.classList.add('hide')
+  }, 5000)
  }
 
  function playerUm(){
+  
 atacar.addEventListener('click', function(){
+  const atacarInterval = setInterval(function() {
   setInterval(function() {
     danoCuraD.classList.remove('green')
     danoCuraD.classList.remove('red')
@@ -93,6 +101,16 @@ atacar.addEventListener('click', function(){
   if(atacarDano === 15) {
     totalVidaDio -= 15
     alert('Polnareff diz: Acertei o ponto fraco dele!')
+    const hitNele = setInterval(function (){
+      dioHit.classList.remove('hide')
+      dioImg.classList.add('hide')
+      clearInterval(hitNele)
+    }, 10)
+    const hitNeleT = setInterval(function (){
+      dioHit.classList.add('hide')
+      dioImg.classList.remove('hide')
+      clearInterval(hitNeleT)
+    }, 100)
   }else if (atacarDano === 0){
     totalVidaPolnareff -= 15
     danoCuraP.innerHTML = -15
@@ -105,26 +123,39 @@ atacar.addEventListener('click', function(){
     danoCuraD.classList.add('red')
     danoCuraD.classList.remove('hide')
     danoCuraD.innerHTML = '-'+atacarDano
+   const hitNele = setInterval(function (){
+      dioHit.classList.remove('hide')
+      dioImg.classList.add('hide')
+      clearInterval(hitNele)
+    }, 10)
+    const hitNeleT = setInterval(function (){
+      dioHit.classList.add('hide')
+      dioImg.classList.remove('hide')
+      clearInterval(hitNeleT)
+    }, 100)
+    
   }
 
   polnareffVida.innerHTML = '<p>Vida: '+totalVidaPolnareff+'/115</p>';
   dioVida.innerHTML = '<p>Vida: '+totalVidaDio+'/150</p>';
   vezDoDio()
- 
-  
+  clearInterval(atacarInterval)
+}, 2000)
 });
 
+
+
 curar.addEventListener('click', function(){
-  
+  const curarInterval = setInterval(function() {
   let vidaCura = Math.floor(Math.random() * 16);
   totalVidaPolnareff += vidaCura;
 
-  setInterval(function() {
+  
   danoCuraP.classList.remove('green')
   danoCuraP.classList.remove('red')
   danoCuraP.classList.remove('anima')
   danoCuraP.classList.add('hide')
-  }, 4000);
+
   
   console.log(vidaCura)
   if (totalVidaPolnareff >= 115) {
@@ -151,18 +182,18 @@ curar.addEventListener('click', function(){
   } else if (totalVidaPolnareff <= 0) {
     totalVidaPolnareff = 0
     alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
-  }
-   else {
-    danoCuraP.innerHTML = '+'+vidaCura
+  }else if (vidaCura > 0){
     danoCuraP.classList.add('green')
     danoCuraP.classList.add('anima')
     danoCuraP.classList.remove('hide')
+    danoCuraP.innerHTML = '+'+vidaCura
   }
   polnareffVida.innerHTML = '<p>Vida: '+totalVidaPolnareff+'/115</p>';
  
   vezDoDio()
-
-})
+  clearInterval(curarInterval)
+}, 2000)
+});
 
 }
 playerUm();
