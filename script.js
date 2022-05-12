@@ -33,10 +33,6 @@ comecar.addEventListener('click', function(event) {
   }
 });
 
-let volume = document.querySelector("#volume-control");
-volume.addEventListener("change", function(e) {
-audio.volume = e.currentTarget.value / 100;
-});
 }
 telaInicial();
 
@@ -58,6 +54,10 @@ let totalVidaPolnareff = 115;
  const tempo =  setInterval(function() {
     let atacarDano = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
     totalVidaPolnareff -= atacarDano;
+    danoCuraP.innerHTML = '-'+atacarDano;
+    danoCuraP.classList.add('anima')
+    danoCuraP.classList.add('red')
+    danoCuraP.classList.remove('hide')
     polnareffVida.innerHTML = '<p>Vida: '+totalVidaPolnareff+'/115</p>';
     playerTurno.classList.remove('hide');
     dioTurno.classList.add('hide'); 
