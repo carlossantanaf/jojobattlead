@@ -57,7 +57,7 @@
   animation-direction: alternate;
 }
 @keyframes dio {
-  from { transform: scale(0.95);}
+  from { transform: scale(0.98);}
   to { transform: scale3d(1);}
 }
 .dioVida, .polnareffVida {
@@ -133,11 +133,21 @@
   animation-name: anima;
   animation-fill-mode: forwards;
 }
+.animaEntrada {
+  animation-name: animaEntrada;
+  animation-duration: 4s;
+  transition: linear;
+}
+@keyframes animaEntrada {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 @keyframes anima {
  0% {top: 30%; opacity: 1;}
  75% {top: 20%; opacity: 1;}
  100% {top: 20%; opacity: 0;}
 }
+
 
 .red {
   color: red;
