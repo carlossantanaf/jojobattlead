@@ -3,6 +3,14 @@
   padding: 0px;
   box-sizing: border-box;
 }
+.dioFinal {
+  display: grid;
+  width: 498px;
+  margin: 5rem auto;
+}
+.dioFinal > .buttonAtacar {
+  border-radius: 0 0px 5px 5px;
+} 
 .main {
   max-width: 1116px;
   background-image: url(../img/back.png);

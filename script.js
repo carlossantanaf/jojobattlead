@@ -6,13 +6,15 @@ const imgs = document.querySelectorAll('.bordas div');
 const main = document.querySelector('.main');
 const aud = document.querySelector('.audio')
 const range = document.querySelector("#volume-controlP");
+const jogarDNV = document.querySelector('.jogarDNV')
+
+jogarDNV.addEventListener("click", function() {
+	location.reload();
+});
+
 range.addEventListener("change", () => {
   aud.volume = range.value * 0.01;
 });
-function autoPI(){
-  aud.play()
-}
-autoPI()
 
 players.forEach((item, index) => {
   item.addEventListener('click', function() {
@@ -20,6 +22,10 @@ players.forEach((item, index) => {
       item.classList.add('hide')
     });
     imgs[index + 1].classList.remove('hide')
+    function autoPI(){
+      aud.play()
+    }
+    autoPI()
   });
 });
 comecar.addEventListener('click', function(event) {
@@ -88,6 +94,7 @@ const danoCuraP = document.querySelector('.danoCuraP')
 const danoCuraD = document.querySelector('.danoCuraD')
 const dioHit = document.getElementById('dioHit')
 const dioImg = document.getElementById('dioImg')
+const dioFinal = document.querySelector('.dioFinal')
 let totalVidaDio = 150;
 let totalVidaPolnareff = 115;
 
@@ -109,6 +116,7 @@ let totalVidaPolnareff = 115;
     if (totalVidaPolnareff <= 0) {
       totalVidaPolnareff = 0
       alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
+      dioFinal.classList.remove('hide')
       battle[0].remove();
     }
     clearInterval(tempo)
@@ -119,11 +127,15 @@ let totalVidaPolnareff = 115;
     danoCuraP.classList.remove('green')
     danoCuraP.classList.add('hide')
   }, 5000)
+  atacar.classList.remove('hide')
+  curar.classList.remove('hide')
  }
 
  function playerUm(){
   
 atacar.addEventListener('click', function(){
+  atacar.classList.add('hide')
+  curar.classList.add('hide')
   const atacarInterval = setInterval(function() {
   setInterval(function() {
     danoCuraD.classList.remove('green')
@@ -189,6 +201,8 @@ atacar.addEventListener('click', function(){
 
 
 curar.addEventListener('click', function(){
+  atacar.classList.add('hide')
+  curar.classList.add('hide')
   const curarInterval = setInterval(function() {
   let vidaCura = Math.floor(Math.random() * 16);
   totalVidaPolnareff += vidaCura;
@@ -225,6 +239,7 @@ curar.addEventListener('click', function(){
   } else if (totalVidaPolnareff <= 0) {
     totalVidaPolnareff = 0
     alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
+    dioFinal.classList.remove('hide')
   }else if (vidaCura > 0){
     danoCuraP.classList.add('green')
     danoCuraP.classList.add('anima')
@@ -253,6 +268,7 @@ function batalhaAA() {
   const danoCuraD = battle[1].querySelector('.danoCuraD')
   const dioHit = battle[1].querySelector('#dioHit')
   const dioImg = battle[1].querySelector('#dioImg')
+  const dioFinal = document.querySelector('.dioFinal')
   let totalVidaDio = 150;
   let totalVidaPolnareff = 100;
   
@@ -274,6 +290,7 @@ function batalhaAA() {
       if (totalVidaPolnareff <= 0) {
         totalVidaPolnareff = 0
         alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
+        dioFinal.classList.remove('hide')
         battle[1].remove();
       }
       clearInterval(tempo)
@@ -284,11 +301,15 @@ function batalhaAA() {
       danoCuraP.classList.remove('green')
       danoCuraP.classList.add('hide')
     }, 5000)
+    atacar.classList.remove('hide')
+    curar.classList.remove('hide')
    }
   
    function playerUm(){
     
   atacar.addEventListener('click', function(){
+    atacar.classList.add('hide')
+    curar.classList.add('hide')
     const atacarInterval = setInterval(function() {
     setInterval(function() {
       danoCuraD.classList.remove('green')
@@ -354,8 +375,10 @@ function batalhaAA() {
   
   
   curar.addEventListener('click', function(){
+    atacar.classList.add('hide')
+    curar.classList.add('hide')
     const curarInterval = setInterval(function() {
-    let vidaCura = Math.floor(Math.random() * 111);
+    let vidaCura = Math.floor(Math.random() * 11);
     totalVidaPolnareff += vidaCura;
   
     
@@ -390,6 +413,7 @@ function batalhaAA() {
     } else if (totalVidaPolnareff <= 0) {
       totalVidaPolnareff = 0
       alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
+      dioFinal.classList.remove('hide')
     }else if (vidaCura > 0){
       danoCuraP.classList.add('green')
       danoCuraP.classList.add('anima')
@@ -418,6 +442,7 @@ function batalhaAA() {
     const danoCuraD = battle[2].querySelector('.danoCuraD')
     const dioHit = battle[2].querySelector('#dioHit')
     const dioImg = battle[2].querySelector('#dioImg')
+    const dioFinal = document.querySelector('.dioFinal')
     let totalVidaDio = 150;
     let totalVidaPolnareff = 120;
     
@@ -439,6 +464,7 @@ function batalhaAA() {
         if (totalVidaPolnareff <= 0) {
           totalVidaPolnareff = 0
           alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
+          dioFinal.classList.remove('hide')
           battle[2].remove();
         }
         clearInterval(tempo)
@@ -449,11 +475,15 @@ function batalhaAA() {
         danoCuraP.classList.remove('green')
         danoCuraP.classList.add('hide')
       }, 5000)
+      atacar.classList.remove('hide')
+      curar.classList.remove('hide')
      }
     
      function playerUm(){
       
     atacar.addEventListener('click', function(){
+      atacar.classList.add('hide')
+      curar.classList.add('hide')
       const atacarInterval = setInterval(function() {
       setInterval(function() {
         danoCuraD.classList.remove('green')
@@ -519,6 +549,8 @@ function batalhaAA() {
     
     
     curar.addEventListener('click', function(){
+      atacar.classList.add('hide')
+      curar.classList.add('hide')
       const curarInterval = setInterval(function() {
       let vidaCura = Math.floor(Math.random() * 21);
       totalVidaPolnareff += vidaCura;
@@ -555,6 +587,7 @@ function batalhaAA() {
       } else if (totalVidaPolnareff <= 0) {
         totalVidaPolnareff <= 0
         alert('Dio diz: Boa Sorte da proxima vez HAHAHAHAHA!')
+        dioFinal.classList.remove('hide')
         battle[2].remove()
       }else if (vidaCura > 0){
         danoCuraP.classList.add('green')
