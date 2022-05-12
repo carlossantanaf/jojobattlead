@@ -1,6 +1,6 @@
 .mainBattle {
   max-width: 1116px;
-  background-image: url(/img/battle/backBattle.png);
+  background-image: url(./img/battle/backBattle.png);
   margin: 0 auto;
 }
 .mainBattle > h1 {
