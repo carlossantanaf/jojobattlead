@@ -7,7 +7,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/battle.css">
   <title>Adventure Battle</title>
 </head>
 <body>
@@ -47,7 +48,41 @@
         </div>
       </aside>
     </section>
-    <script src="./script.js"></script>
   </main>
+
+  <main class="mainBattle hide">
+    <audio class="audio" src="./audios/diotheme.mp3"  loop></audio>
+    <input type="range" id="volume-control">
+    <h1><span>A</span>dventure <span>B</span>attle</h1>
+    <section class="battle">
+      <div class="polnareff">
+        <aside class="polnareffVida">
+          <p>Jean Polnareff</p>
+          <p>Vida: 115/115</p>
+        </aside>
+        <img src="/img/battle/polnarefBattle.png" alt="Polnareff">
+        <div class="danoCuraP"></div>
+      </div>
+      
+      <div class="dio">
+        <img src="/img/battle/dio.png" alt="dio">
+        <aside class="dioVida">
+          <p>Dio Brando</p>
+          <p>Vida: 150/150</p>
+        </aside>
+        <div class="danoCuraD"></div>
+      </div>
+     
+    </section>
+   <section class="turno">
+      <h2>Seu Turno</h2>
+      <input type="submit" class="buttonAtacar" value="Atacar">
+      <input type="submit" class="buttonCurar" value="Curar">
+    </section> 
+    <section class="turno-dio hide">
+      <h2>Turno do Diiiiioo Brando</h2>
+    </section>
+  </main>
+  <script src="./script.js"></script>
 </body>
 </html>

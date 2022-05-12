@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .main {
-  max-width: 1400px;
+  max-width: 1116px;
   background-image: url(/img/back.png);
   margin: 0 auto;
 }
@@ -73,6 +73,7 @@
   background: linear-gradient(#EE0000, #7D0000);
   cursor: pointer;
 }
+
 .buttonComecar:hover {
   background: #7D0000;
 }
@@ -82,5 +83,7 @@
 }
 .hide {
   display: none;
+  position: absolute;
+  top: -500px;
   opacity: 0;
 }
