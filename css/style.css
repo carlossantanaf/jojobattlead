@@ -5,7 +5,9 @@
 }
 .main {
   max-width: 1116px;
-  background-image: url(./img/back.png);
+  background-image: url(../img/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0 auto;
 }
 .main > h1 {
